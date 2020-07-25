@@ -1,6 +1,8 @@
 const div1 = document.querySelectorAll('div')
 let counter = 0
+let counter1 = 0
 console.dir(div1)
+// 'ремастеред'
 
 for (let i = 0; i < div1.length-1; i++) {
     const kv = div1[i]
@@ -12,6 +14,7 @@ for (let i = 0; i < div1.length-1; i++) {
             kv.textContent = 'X'
             kv.style.color = 'white'
             counter = ++counter
+            counter1 = ++counter1
             if (div1[0].textContent === 'X' && div1[1].textContent === 'X' && div1[2].textContent === 'X') {
                 alert('Peremoha X')
             } else if (div1[3].textContent === 'X' && div1[4].textContent === 'X' && div1[5].textContent === 'X') {
@@ -28,6 +31,8 @@ for (let i = 0; i < div1.length-1; i++) {
                 alert('Peremoha X')
             } else if (div1[2].textContent === 'X' && div1[4].textContent === 'X' && div1[6].textContent === 'X') {
                 alert('Peremoha X')
+            } else if (counter1 === 9) {
+                alert('POGU')
             }
         }  else if (counter === 1) {
             if (kv.textContent === 'X') {
@@ -36,6 +41,7 @@ for (let i = 0; i < div1.length-1; i++) {
             kv.textContent = 'O'
             kv.style.color = 'white'
             counter = --counter
+            counter1 = ++counter1
 
             if (div1[0].textContent === 'O' && div1[1].textContent === 'O' && div1[2].textContent === 'O') {
                 alert('Peremoha O')
@@ -56,6 +62,7 @@ for (let i = 0; i < div1.length-1; i++) {
             }
         }
         console.log(counter)
+        console.log(counter1)
     }
     div1[9].onclick = function () {
         for (const kv of div1) {
@@ -64,4 +71,5 @@ for (let i = 0; i < div1.length-1; i++) {
             counter = 0
         }
     }
+
 }
